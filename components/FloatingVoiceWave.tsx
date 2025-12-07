@@ -11,20 +11,33 @@ export default function FloatingVoiceWave({ active }: FloatingVoiceWaveProps) {
     <div
       className="fixed z-30 pointer-events-none"
       style={{
-        top: '60px', // Header 높이
-        left: '288px', // Sidebar 너비 (72 * 4 = 288px)
-        right: '0',
+        top: '60px', // 그대로
+        left: '288px', // 그대로
+        right: '0', // 그대로
       }}
     >
-      {/* 그라데이션 배경 - 위에서 아래로 자연스럽게 페이드 */}
+      {/* 블러 + 그라데이션 (위 진하게, 아래로 갈수록 사라짐) */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none"
         style={{
-          height: '100px',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '220px', // 이 높이 안에서만 효과 나옴 (원하는 값으로 조절)
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          // 살짝 어둡게 깔리는 컬러 그라데이션
           background:
-            'linear-gradient(to bottom, rgba(49, 51, 56, 0.6) 0%, rgba(49, 51, 56, 0.4) 25%, rgba(49, 51, 56, 0.2) 50%, rgba(49, 51, 56, 0.1) 75%, transparent 100%)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
+            'linear-gradient(to bottom,' +
+            'rgba(49, 51, 56, 0.6) 0%,' +
+            'rgba(49, 51, 56, 0.4) 40%,' +
+            'rgba(49, 51, 56, 0.0) 100%)',
+          // 👇 이게 포인트: 블러 자체가 아래로 갈수록 사라지게 마스크
+          WebkitMaskImage:
+            'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
+          maskImage:
+            'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
         }}
       />
 
