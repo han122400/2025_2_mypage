@@ -586,20 +586,22 @@ function PortfolioContent() {
 
 export default function Portfolio() {
   return (
-    <Suspense fallback={
-      <div className="flex min-h-screen bg-[#313338]">
-        <Sidebar currentPage="portfolio" />
-        <main className="flex-1 flex flex-col ml-72">
-          <Header icon={Users} title="포트폴리오" />
-          <div className="flex-1 overflow-y-auto p-6">
-            <div className="max-w-6xl mx-auto text-center py-20">
-              <div className="inline-block w-8 h-8 border-4 border-[#5865f2] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-gray-400 mt-4">로딩 중...</p>
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen bg-[#313338]">
+          <Sidebar currentPage="portfolio" />
+          <main className="flex-1 flex flex-col ml-72">
+            <Header icon={Users} title="포트폴리오" />
+            <div className="flex-1 overflow-y-auto p-6">
+              <div className="max-w-6xl mx-auto text-center py-20">
+                <div className="inline-block w-8 h-8 border-4 border-[#5865f2] border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-gray-400 mt-4">로딩 중...</p>
+              </div>
             </div>
-          </div>
-        </main>
-      </div>
-    }>
+          </main>
+        </div>
+      }
+    >
       <PortfolioContent />
     </Suspense>
   )

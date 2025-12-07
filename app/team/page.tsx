@@ -36,7 +36,7 @@ export default function Team() {
       role: 'CTO',
       avatar: 'P',
       color: '#eb459e',
-      description: '개발총괄 및 배포 전문가',
+      description: '개발총괄 및 배포',
       skills: ['next.js', 'FastAPI', 'TypeScript', 'Docker', 'GCP'],
       studentId: '92212867',
       phone: '010-9737-1732',

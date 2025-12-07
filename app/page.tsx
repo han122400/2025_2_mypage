@@ -12,6 +12,7 @@ import {
   Phone,
   Mail,
   GraduationCap,
+  Globe,
 } from 'lucide-react'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
@@ -194,6 +195,17 @@ export default function Home() {
                         vinny122400@gmail.com
                       </a>
                     </div>
+                    <div className="flex items-center gap-3 text-gray-300 justify-center md:justify-start">
+                      <Globe className="w-5 h-5 text-cyan-400" />
+                      <a
+                        href="https://vercel.com/parkhanbins-projects"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-cyan-400 transition-colors"
+                      >
+                        Vercel 사이트
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,6 +214,72 @@ export default function Home() {
             {/* 기술 스택 카드 */}
             <div className="bg-[#2b2d31] rounded-lg p-6 mb-6">
               <h2 className="text-white text-2xl font-bold mb-4">기술 스택</h2>
+
+              {/* 주요 기술 로고 */}
+              <div className="mb-8">
+                <h3 className="text-gray-400 text-sm font-semibold mb-4">
+                  주요 프레임워크:
+                </h3>
+                <div className="flex flex-wrap gap-6 justify-center md:justify-start">
+                  <div className="group flex flex-col items-center gap-3">
+                    <div className="w-45 h-24 bg-white rounded-xl p-4 flex items-center justify-center transition-all hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
+                      <Image
+                        src="/logo/Nextj.svg"
+                        alt="Next.js"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-gray-300 text-sm font-semibold group-hover:text-cyan-400 transition-colors">
+                      Next.js
+                    </span>
+                  </div>
+                  <div className="group flex flex-col items-center gap-3">
+                    <div className="w-45 h-24 bg-white rounded-xl p-4 flex items-center justify-center transition-all hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
+                      <Image
+                        src="/logo/fastapi.png"
+                        alt="FastAPI"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-gray-300 text-sm font-semibold group-hover:text-cyan-400 transition-colors">
+                      FastAPI
+                    </span>
+                  </div>
+                  <div className="group flex flex-col items-center gap-3">
+                    <div className="w-45 h-24 bg-white rounded-xl p-4 flex items-center justify-center transition-all hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
+                      <Image
+                        src="/logo/supabase.png"
+                        alt="Supabase"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-gray-300 text-sm font-semibold group-hover:text-cyan-400 transition-colors">
+                      Supabase
+                    </span>
+                  </div>
+                  <div className="group flex flex-col items-center gap-3">
+                    <div className="w-45 h-24 bg-white rounded-xl p-4 flex items-center justify-center transition-all hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
+                      <Image
+                        src="/logo/docker.png"
+                        alt="Docker"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="text-gray-300 text-sm font-semibold group-hover:text-cyan-400 transition-colors">
+                      Docker
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               {loading ? (
                 <div className="text-center py-8">
                   <div className="inline-block w-8 h-8 border-4 border-[#5865f2] border-t-transparent rounded-full animate-spin"></div>
