@@ -6,10 +6,17 @@ import {
   Smile,
   Database,
   ShoppingCart,
+  Radio,
 } from 'lucide-react'
 
 interface SidebarProps {
-  currentPage: 'home' | 'portfolio' | 'team' | 'projects_team' | 'projects_my'
+  currentPage:
+    | 'home'
+    | 'portfolio'
+    | 'team'
+    | 'projects_team'
+    | 'projects_my'
+    | 'live_ai'
   crudLink?: 'https://crud-three-lake.vercel.app'
   shoppingMallLink?: 'https://shopping-mall-brown.vercel.app'
 }
@@ -68,6 +75,22 @@ export default function Sidebar({
         >
           <Rocket className="w-5 h-5" />
           <span>팀 프로젝트</span>
+        </Link>
+
+        {/* 구분선 */}
+        <div className="my-4 border-t border-[#404249]"></div>
+
+        {/* Live AI */}
+        <Link
+          href="/live_ai"
+          className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors mb-2 ${
+            currentPage === 'live_ai'
+              ? 'bg-[#404249] text-white'
+              : 'text-gray-300 hover:bg-[#404249] hover:text-white'
+          }`}
+        >
+          <Radio className="w-5 h-5" />
+          <span>Live AI</span>
         </Link>
 
         {/* 구분선 */}
